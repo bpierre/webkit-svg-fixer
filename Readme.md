@@ -9,7 +9,7 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
 ## Installation
 
-### [component](https://github.com/component/component#readme)
+### With [component](https://github.com/component/component#readme)
 
     $ component install bpierre/webkit-svg-fixer
 
@@ -24,13 +24,15 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
 ### fixall(webkitTest)
 
-Fix images in all SVGs embedded as `<img src="something.svg">`. If the browser is not webkit,
+Fix images in all SVGs embedded as `<img src="something.svg">`. If the browser is not webkit, it does nothing. You can provide a `webkitTest` (boolean or a function).
 
 ### fixsvg(url)
 
-### fiximages()
+Fix a single SVG URL. You can safely call it multiple times with the same URL, only one `<object>` will be inserted. **You have to test WebKit before calling this function.**
 
+### fiximages(images)
 
+Fix all `<img>` ending with `.svg` in the document. You can also provide the images you want, as a CSS selector, or a NodeList. **You have to test WebKit before calling this function.**
 
 ## FAQ
 
@@ -40,4 +42,4 @@ WebKit SVG Fixer does less. No regex searches in the CSS, base64 conversion or A
 
 ## License
 
-  MIT
+  [MIT](http://pierre.mit-license.org/)
