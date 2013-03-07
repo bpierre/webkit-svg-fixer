@@ -3,7 +3,7 @@
 Fix SVG images in WebKit browsers.
 
 When an SVG file is not directly in the HTML document (img element, CSS background), WebKit do not display the embedded xlink references (e.g. images), unless the SVG has already been displayed directly in the document.
-WebKit SVG Fixer uses this to force the display on WebKit, by inserting hidden SVGs in the document (as objects). when the SVG is not directly in the page.
+WebKit SVG Fixer uses this to force the display on WebKit, by inserting hidden SVGs in the document (as `<objects>` elements).
 
 More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-image-with-svg/
 
