@@ -217,11 +217,10 @@ require.register("webkit-svg-fixer/index.js", function(exports, require, module)
 
 'use strict';
 
-module.exports = {
-  fixsvg: fixsvg,
-  fiximages: fiximages,
-  fixall: fixall
-};
+module.exports = function(){ fixall(); };
+module.exports.fixsvg = fixsvg;
+module.exports.fiximages = fiximages;
+module.exports.fixall = fixall;
 
 var window = this;
 var document = window.document;
@@ -266,7 +265,7 @@ function fixsvg(url) {
  * @api public
  */
 function fiximages(images) {
-  if (!images) images = 'img[src$=.svg]';
+  if (!images) images = 'img[src$=".svg"]';
   if (typeof images == 'string') {
     images = document.querySelectorAll(images);
   }
@@ -284,7 +283,7 @@ function fiximages(images) {
 function fixall(webkitTest) {
   if (webkitTest === false ||
       (typeof webkitTest === 'function' && !webkitTest()) ||
-      /webkit/i.test(window.navigator.userAgent)) {
+      !/webkit/i.test(window.navigator.userAgent)) {
     return;
   }
   fiximages();
