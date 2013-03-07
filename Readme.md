@@ -9,10 +9,26 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
 ## Installation
 
+### [component](https://github.com/component/component#readme)
+
     $ component install bpierre/webkit-svg-fixer
+
+### Old fashion (standalone, AMD, CommonJS)
+
+- Development: [dist/webkit-svg-fixer.js](dist/webkit-svg-fixer.js)
+- Production: [dist/webkit-svg-fixer.min.js](dist/webkit-svg-fixer.min.js)
+
+**Note**: if you use this library standalone, the main object, `webkitSvgFixer`, will be attached to the `window`. You can access it with `window.webkitSvgFixer` or just `webkitSvgFixer`, and call the functions on it, e.g. `webkitSvgFixer.fixall()`.
 
 ## API
 
+### fixall(webkitTest)
+
+Fix images in all SVGs embedded as `<img src="something.svg">`. If the browser is not webkit,
+
+### fixsvg(url)
+
+### fiximages()
 
 
 
