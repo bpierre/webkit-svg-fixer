@@ -3,7 +3,7 @@
   "repo": "bpierre/webkit-svg-fixer",
   "description": "Force the rendering of embedded SVG images in WebKit Fix the image embedding in WebKit based browsers",
   "version": "0.1.0",
-  "keywords": [],
+  "keywords": ["webkit", "svg"],
   "dependencies": {},
   "development": {},
   "license": "MIT",
