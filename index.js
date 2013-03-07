@@ -65,10 +65,14 @@ function fiximages(images) {
 /**
  * Fix all SVGs if the browser is WebKit.
  *
- * @param {Function} WebKit test
+ * @param {Function|Boolean} WebKit test
  * @api public
  */
-function fixall(wkTest) {
-  if (!(wkTest? wkTest() : /webkit/i.test(window.navigator.userAgent))) return;
+function fixall(webkitTest) {
+  if (webkitTest === false ||
+      (typeof webkitTest === 'function' && !webkitTest()) ||
+      /webkit/i.test(window.navigator.userAgent)) {
+    return;
+  }
   fiximages();
 }
