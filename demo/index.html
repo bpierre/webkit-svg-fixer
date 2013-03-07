@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WebKit SVG Fixer Demo</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
+	<link rel="stylesheet" href="http://pierrebertet.net/minimum.css">
+	<style>
+		body {
+			min-width: 820px;
+			max-width: 1200px;
+			margin: 50px;
+			padding: 0;
+		}
+		button {
+			vertical-align: middle;
+			cursor: pointer;
+		}
+		div {
+			float: left;
+			width: 50%;
+		}
+		img {
+			display: block;
+			background: #69309d;
+		}
+		header {
+			margin-bottom: 50px;
+		}
+		footer {
+			padding-top: 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>WebKit SVG Fixer Demo</h1>
+		<p>Instructions, source code, everything you need ☞ <a href="https://github.com/bpierre/webkit-svg-fixer">https://github.com/bpierre/webkit-svg-fixer</a>.</p>
+	</header>
+
+	<div>
+		<h2>You should see this (PNG):</h2>
+		<p><img src="demo.png" width="400" height="400" alt="Demo bitmap"></p>
+	</div>
+
+	<div>
+		<h2>And you see this (SVG):</h2>
+		<p><img src="demo.svg" width="400" height="400" alt="Demo SVG"></p>
+	</div>
+
+	<p>Different images? <button type="button" onclick="webkitSvgFixer()">Fix the SVG files in this page</button>.</p>
+
+	<footer><p><a href="http://pierrebertet.net/">Pierre Bertet</a> <a href="mailto:bonjour@pierrebertet.net">&lt;bonjour@pierrebertet.net&gt;</a></p></footer>
+
+	<script src="https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.min.js"></script>
+</body>
+</html>
