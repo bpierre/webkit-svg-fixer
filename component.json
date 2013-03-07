@@ -2,7 +2,7 @@
   "name": "webkit-svg-fixer",
   "repo": "bpierre/webkit-svg-fixer",
   "description": "Fix SVG in WebKit browsers, force the rendering of images embedded in SVG docs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": ["webkit", "svg"],
   "dependencies": {},
   "development": {},

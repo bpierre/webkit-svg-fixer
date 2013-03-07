@@ -44,6 +44,10 @@ function fixsvg(url) {
   if (fixedUrls.indexOf(url) > -1) return;
   var objectElt = mkObject();
   objectElt.data = url;
+  objectElt.addEventListener('load', function(){
+    objectElt.parentNode.removeChild(objectElt);
+  }, false);
+
   body.appendChild(objectElt);
   fixedUrls.push(url);
 }
