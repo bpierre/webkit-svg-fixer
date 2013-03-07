@@ -253,7 +253,10 @@ function mkObject(){
  */
 function fixsvg(url) {
   if (fixedUrls.indexOf(url) > -1) return;
-  body.appendChild(mkObject()).data = url;
+  var objectElt = mkObject();
+  objectElt.data = url;
+  body.appendChild(objectElt);
+  fixedUrls.push(url);
 }
 
 /**
