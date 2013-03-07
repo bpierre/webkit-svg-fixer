@@ -13,12 +13,16 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
     $ component install bpierre/webkit-svg-fixer
 
-### Old fashion (standalone, AMD)
+### Old Fashion (standalone, AMD)
 
 - Development: [dist/webkit-svg-fixer.js](https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.js)
 - Production: [dist/webkit-svg-fixer.min.js](https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.min.js)
 
 **Note**: if you use this library standalone, the main object, `webkitSvgFixer`, will be attached to the `window`. You can access it with `window.webkitSvgFixer` or just `webkitSvgFixer`, and call the functions on it, e.g. `webkitSvgFixer.fixall()`.
+
+## Quick Start
+
+Just call the main object directly: `require('webkit-svg-fixer')()`, or `window.webkitSvgFixer()`.
 
 ## API
 
