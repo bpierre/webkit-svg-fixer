@@ -24,7 +24,7 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
 ### fixall(webkitTest)
 
-Fix images in all SVGs embedded as `<img src="something.svg">`. If the browser is not webkit, it does nothing. You can provide a `webkitTest` (boolean or a function).
+Fix images in all SVGs embedded as `<img src="something.svg">`. If the browser is not webkit, it does nothing. You can provide a `webkitTest` (boolean or function).
 
 ### fixsvg(url)
 
@@ -32,7 +32,7 @@ Fix a single SVG URL. You can safely call it multiple times with the same URL, o
 
 ### fiximages(images)
 
-Fix all `<img>` ending with `.svg` in the document. You can also provide the images you want, as a CSS selector, or a NodeList. **You have to test WebKit before calling this function.**
+Fix all `<img>` ending with `.svg` in the document. You can also provide the images you want, as a CSS selector or a NodeList. **You have to test WebKit before calling this function.**
 
 ## FAQ
 
