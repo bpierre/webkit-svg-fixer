@@ -13,7 +13,7 @@ More info: http://www.eleqtriq.com/2012/01/enhancing-css-sprites-and-background-
 
     $ component install bpierre/webkit-svg-fixer
 
-### Old fashion (standalone, AMD, CommonJS)
+### Old fashion (standalone, AMD)
 
 - Development: [dist/webkit-svg-fixer.js](https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.js)
 - Production: [dist/webkit-svg-fixer.min.js](https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.min.js)
