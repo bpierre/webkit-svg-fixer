@@ -37,13 +37,35 @@ You can provide some options:
  - `fixImages`: Fix SVG in image elements (Boolean, default: true)
  - `fixBackgrounds`: Fix SVG in CSS backgrounds (Boolean, default: true)
 
+Example:
+
+```js
+var svgFixer = require('webkit-svg-fixer');
+svgFixer.fixall({
+  fixBackgrounds: false // Don’t search in CSS backgrounds
+});
+```
+
 ### fixsvg(url)
 
 Fix a single SVG URL. You can safely call it multiple times with the same URL, only one `<object>` will be inserted. **You have to test WebKit before calling this function.**
 
+```js
+svgFixer.fixsvg('http://example.com/my-image.svg');
+```
+
 ### fiximages(images)
 
 Fix all `<img>` ending with `.svg` in the document. You can also provide the images you want, as a CSS selector or a NodeList. **You have to test WebKit before calling this function.**
+
+```js
+// CSS selector
+svgFixer.fiximages('img.svg');
+
+// NodeList
+var images = document.getElementsByClassName('svg-image');
+svgFixer.fiximages(images);
+```
 
 ## FAQ
 
