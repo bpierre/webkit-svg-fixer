@@ -28,7 +28,11 @@
 			margin-bottom: 50px;
 		}
 		footer {
+			clear: both;
 			padding-top: 50px;
+		}
+		.svg-image {
+			background-image: url(background-demo.svg);
 		}
 	</style>
 </head>
@@ -41,18 +45,26 @@
 
 	<div>
 		<h2>You should see this (PNG):</h2>
-		<p><img src="demo.png" width="400" height="400" alt="Demo bitmap"></p>
+		<p><img src="demo.png" width="400" height="400" alt="Demo bitmap: img element"></p>
+	</div>
+	<div>
+		<h2>And you see this (SVG as an &lt;img&gt;):</h2>
+		<p><img src="demo.svg" width="400" height="400" alt="Demo SVG"></p>
+		<p>Images missing? <button type="button" onclick="webkitSvgFixer()">Fix SVG images</button>.</p>
 	</div>
 
 	<div>
-		<h2>And you see this (SVG):</h2>
-		<p><img src="demo.svg" width="400" height="400" alt="Demo SVG"></p>
+		<h2>You should see this (PNG):</h2>
+		<p><img src="background-demo.png" width="400" height="400" alt="Demo bitmap: CSS background"></p>
 	</div>
-
-	<p>Different images? <button type="button" onclick="webkitSvgFixer()">Fix the SVG files in this page</button>.</p>
+	<div>
+		<h2>And you see this (SVG as a CSS background):</h2>
+		<p><img width="400" height="400" class="svg-image"></p>
+		<p>Images missing? <button type="button" onclick="webkitSvgFixer()">Fix SVG images</button>.</p>
+	</div>
 
 	<footer><p><a href="http://pierrebertet.net/">Pierre Bertet</a> <a href="mailto:bonjour@pierrebertet.net">&lt;bonjour@pierrebertet.net&gt;</a></p></footer>
 
-	<script src="https://raw.github.com/bpierre/webkit-svg-fixer/master/dist/webkit-svg-fixer.min.js"></script>
+	<script src="../dist/webkit-svg-fixer.js"></script>
 </body>
 </html>

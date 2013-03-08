@@ -279,18 +279,57 @@ function fiximages(images) {
 }
 
 /**
- * Fix all SVGs if the browser is WebKit.
+ * Fix SVG backgrounds.
  *
- * @param {Function|Boolean} WebKit test
  * @api public
  */
-function fixall(webkitTest) {
-  if (webkitTest === false ||
-      (typeof webkitTest === 'function' && !webkitTest()) ||
-      !/webkit/i.test(window.navigator.userAgent)) {
+function fixbackgrounds() {
+  var bgRe = /background.*?url\(.*?\.svg.*?\;/;
+  var svgUrlRe = /url\((.*?\.svg)/;
+  var res;
+  for (var i=0, stylesheet; stylesheet = document.styleSheets[i]; i++) {
+    try {
+      if (!stylesheet.cssRules) continue;
+      for (var j=0, cssrule; cssrule = stylesheet.cssRules[j]; j++) {
+        if (bgRe.test(cssrule.cssText)) { // first test: background-something
+          res = cssrule.cssText.match(svgUrlRe); // ok, get the URL
+          if (res) fixsvg(res[1].trim()); // fix it!
+        }
+      }
+    } catch(err) {
+      // 18 = not the same domain
+      if (err.code !== 18) throw err;
+    }
+  }
+}
+
+/**
+ * Fix all SVGs if the browser is WebKit.
+ *
+ * Options:
+ *
+ *  - `webkitTest` Custom WebKit test (Function or Boolean, default: tests `/webkit/` in the user agent string)
+ *  - `fixImages` Fix SVG in image elements (Boolean, default: true)
+ *  - `fixBackgrounds` Fix SVG in CSS backgrounds (Boolean, default: true)
+ *
+ * @param {Object} options
+ * @api public
+ */
+function fixall(opts) {
+  if (!opts) opts = {};
+
+  if (!( opts.webkitTest === true ||
+    (typeof opts.webkitTest == 'function' && opts.webkitTest()) ||
+    /webkit/i.test(window.navigator.userAgent))) {
     return;
   }
-  fiximages();
+
+  if (opts.fixImages || opts.fixImages === undefined) {
+    fiximages();
+  }
+  if (opts.fixBackgrounds || opts.fixBackgrounds === undefined) {
+    fixbackgrounds();
+  }
 }
 
 });
