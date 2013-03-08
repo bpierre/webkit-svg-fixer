@@ -43,7 +43,11 @@ Fix all `<img>` ending with `.svg` in the document. You can also provide the ima
 
 ### What are the differences with [dirkweber’s flattensvg](https://github.com/dirkweber/flattensvg.js)?
 
-WebKit SVG Fixer does less. No regex searches in the CSS, base64 conversion or Ajax requests for testing the browser cache. Instead, you have an API which lets you do what you want.
+WebKit SVG Fixer does less. The main goal of flatten SVG is to convert external images in base64. Also, it does Ajax requests for testing the browser cache. WebKit SVG Fixer exposes an API which lets you do what you want.
+
+## Credits
+
+* [flattensvg](https://github.com/dirkweber/flattensvg.js)
 
 ## License
 
